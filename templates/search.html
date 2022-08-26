@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content %}
+
+
+	<!-- product section -->
+	<div class="product-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+
+			</div>
+
+			<div class="row" style="height:100;width:100;">
+
+
+				{% for i in pr %}
+				<div class="col-lg-4 col-md-6 text-center">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href='{{i.get_url}}'>
+								<img src={{i.img.url}} alt="" style='height:300px;width:300px;'></a>
+						</div>
+						<h3>{{i.name}}</h3>
+						<p>{{i.desc|truncatewords:3}}</p>
+
+						<p class="product-price">{{i.price}}</p>
+
+					</div>
+				</div>
+				{% endfor %}
+
+			</div>
+		</div>
+	</div>
+	<!-- end product section -->
+
+
+
+
+
+
+
+
+
+	<!-- jquery -->
+	<script src="{% static 'assets/js/jquery-1.11.3.min.js' %}"></script>
+	<!-- bootstrap -->
+	<script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+	<!-- count down -->
+	<script src="{% static 'assets/js/jquery.countdown.js' %}"></script>
+	<!-- isotope -->
+	<script src="{% static 'assets/js/jquery.isotope-3.0.6.min.js' %}"></script>
+	<!-- waypoints -->
+	<script src="{% static 'assets/js/waypoints.js' %}"></script>
+	<!-- owl carousel -->
+	<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+	<!-- magnific popup -->
+	<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+	<!-- mean menu -->
+	<script src="{% static 'assets/js/jquery.meanmenu.min.js' %}"></script>
+	<!-- sticker js -->
+	<script src="{% static 'assets/js/sticker.js' %}"></script>
+	<!-- main js -->
+	<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</div>
+{% endblock %}
